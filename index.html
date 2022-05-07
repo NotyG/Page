@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Title</title>
+    <meta charset="utf-8" />
 </head>
 <body>
- hello world
+    <div>
+12
+    </div>
+<script>
+var div = document.getElementsByTagName("div")[0];
+div.textContent = 12;
+var elem = document.createElement("h2");
+elem.appendChild(document.createTextNode("123"));
+div.appendChild(elem);
+</script>
 </body>
 </html>
