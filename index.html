@@ -3,27 +3,29 @@
 <title>Hi</title>
 <style>
 /*класс*/
-.image {
-	position	: relative;
+.image{
+	position: relative;
 	display: inline-block;
-	vertical-align:top;
+	vertical-align: top;
 }
 /*чтобы картинка стояла нормально*/
 img{
-max-width: 100%;
+	max-width: 100%;
 }
 
 /*общее оформление ссылок*/
 a{
-display: block;
-font-style: none;
-color: lime;
-border: 2px solid lime;
-/*возможно придётся подобрать в относительном значении для лучшего отображения на разных дисплеях*/
-border-radius: 30px;
+	display: block;
+	text-decoration: none;
+	/*чтобы задать прозрачный цвет использовать   rgba(0,0,0,0);  */
+	color: lime;
+	border: 2px solid lime;
+	/*возможно придётся подобрать в относительном значении для лучшего отображения на разных дисплеях*/
+	border-radius: 30px;
 }
+
 /*оформление определённой ссылки */
-#karandel {
+#karandel{
 	position: absolute;
 	top	: 16%;
 	left: 54%;
@@ -31,17 +33,25 @@ border-radius: 30px;
 	возможно придётся подобрать в относительном значении для лучшего отображения на разных дисплеях*/
 	height: 25px; 
 	width: 25px;  
-	}
+}
+	
 /*для наглядности */
-div{
-border: 5px solid red;
+#imgcont{
+	border: 5px solid red;
+}
+#rep{
+display: inline;
+padding: 4px;
+color: rebeccapurple;
+border: 5px solid black;
 }
 </style>
 </head>
 <body>
-<div class="image">
+<div id = "imgcont" class="image">
 <img src = "map.jpg" alt="img">
 <a id = "karandel" href="http://example.com"></a>
 </div>
+<a id="rep" href ="https://github.com/NotyG/Page">В РЕПОЗИТОРИЙ!</a>
 </body>
 </html>
