@@ -4,21 +4,31 @@
 <style>
 
 /*оставить, важно*/
-@media(min-width: 760px){
-	.wrapper{
+
+.wrapper{
 		text-align: center;
-		border: 4px solid blue;
-	}
+		border: 4px solid blue; /*это можно стереть*/
 }
+
 .image{
 	position: relative;
 	display: inline-block;
 	vertical-align: top;
 }
+
+@media(max-width: 1200px){
+	.wrapper{
+		border: none;
+		text-align: none;
+	}
+	.image{
+		width: 100%;
+	}
+}
+
 /*чтобы картинка стояла нормально*/
 img{
-	max-width: 100%;
-	min-width: 50%;
+	width: 100%;
 }
 
 /*общее оформление ссылок*/
@@ -26,8 +36,8 @@ a{
 	display: block;
 	text-decoration: none;
 	/*чтобы задать прозрачный цвет использовать   rgba(0,0,0,0);  */
-	color: lime;
-	border: 2px solid lime;
+	color: lime; /*это можно стереть*/
+	border: 2px solid lime; /*это можно стереть*/
 	/*возможно придётся подобрать в относительном значении для лучшего отображения на разных дисплеях*/
 	border-radius: 30px;
 }
@@ -41,11 +51,13 @@ a{
 	height: 2.3%; 
 	width: 2.9%;  
 }
-	
-/*для наглядности */
+
+
+/*для наглядности */ /*это можно стереть*/
 #imgcont{
 	border: 5px solid red;
 }
+
 #rep{
 display: block;
 padding: 4px;
