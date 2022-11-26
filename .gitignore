@@ -3,3 +3,6 @@
 #except php files
 !*.py
 !*.cpp
+.dist/
+.build/
+.__pycache__/
