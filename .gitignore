@@ -1,8 +1,4 @@
-#ignore all kind of files
-*.*
-#except php files
-!*.py
-!*.cpp
+!.py
 .dist/
 .build/
 .__pycache__/
