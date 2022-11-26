@@ -1,0 +1,54 @@
+string = input()
+for i in range(len(string)):
+    if string[i] == '.':
+        string = string[i:] + string[:i]
+        break
+count = 0
+l = 0
+maxL, maxR = 0, 0
+maxLength = 0
+length = 0
+for i in range(len(string)):
+    if string[i] == '*':
+        if length == 0:
+            l = i
+        length += 1
+    if string[i] == '.':
+        length = 0
+    if length > maxLength:
+        maxLength = length
+        maxL = l
+        maxR = i
+string = list(string[(maxR+1):] + string[:(maxR+1)])
+maxR = len(string) - 1
+maxL = maxR - maxLength + 1
+l = -1
+r = maxL
+# print(*string)
+# print(maxLength, maxL, maxR)
+while string[(l+1): r].count('*') !=0:
+    # print('new')
+    for i in range(l+1, r):
+        if string[i] == '*':
+            rightOnTheWay = string[(i+1):r].count('*') 
+            leftOnTheWay = string[(l+1):i].count('*')
+            if abs(i-l) - 1 - leftOnTheWay < abs(i - r)-1 - rightOnTheWay and leftOnTheWay == 0:
+                count += abs(i-l)-1 - leftOnTheWay
+                l += 1
+                string[i] = '.'
+                string[l] = '*'
+                # maxLength += 1
+            if abs(i - r)-1 - rightOnTheWay < abs(i-l)-1 - leftOnTheWay and rightOnTheWay == 0:
+                count += abs(i - r)-1 - rightOnTheWay
+                r -= 1
+                string[i] = '.'
+                string[r] = '*'
+                # maxLength += 1 
+            if abs(i - r)-1 - rightOnTheWay == abs(i-l)-1 - leftOnTheWay and leftOnTheWay == 0:
+                count +=  abs(i-l)-1 - leftOnTheWay
+                l += 1
+                string[i] = '.'
+                string[l] = '*'
+                # maxLength += 1
+            # print(count ,l, r, '  ' ,*string)
+print(count)

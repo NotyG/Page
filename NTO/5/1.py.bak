@@ -1,0 +1,17 @@
+from math import ceil
+n = int(input())
+m = int(input())
+k = int(input())
+portion1 = ceil(n / m) #первый тип порции
+portion2 = portion1 - 1 #второй тип порции
+# print(portion1, portion2)
+numOfPortion1 = n - portion2 * m #(n - portion2 * m)//(portion1 - portion2) #система уравнений решается так
+numOfPortion2 = m - numOfPortion1
+# print(numOfPortion1, numOfPortion2)
+minutesAtPortion1 = portion1 // k #сразу количество целых порций
+minutesAtPortion2 = portion2 // k
+print(minutesAtPortion1, minutesAtPortion2)
+if portion1 % k != 0: minutesAtPortion1 += 1 #если не целая порция существует, то она такая одна
+if portion2 % k != 0: minutesAtPortion2 += 1
+# print(minutesAtPortion1, minutesAtPortion2)
+print(minutesAtPortion1 * numOfPortion1 + minutesAtPortion2 * numOfPortion2)

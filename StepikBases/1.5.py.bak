@@ -1,0 +1,16 @@
+n = int(input())
+a = list(map(int, input().split()))
+m = int(input())
+b = list(map(int, input().split()))
+a.sort()
+b.sort()
+count = 0
+j = 0
+for i in range(n):
+    for j in range(j, m):
+        if a[i] + 1 < b[j]:
+            break
+        if abs(a[i] - b[j]) == 1:
+            count+=1
+print(count)
+        

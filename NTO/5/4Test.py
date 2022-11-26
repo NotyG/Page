@@ -1,0 +1,10 @@
+from random import randint as rand
+string = ''
+file = open('4Test.out', 'w')
+for i in range(2* 10 **5):
+    if rand(0, 1) == 1:
+        string += '*'
+    else:
+        string += '.'
+print(len(string))
+print(string, file = file)

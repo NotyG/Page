@@ -1,0 +1,10 @@
+from math import gcd
+a1 , b1 = map(int, input().split())
+a2 , b2 = map(int, input().split())
+if gcd(a1, a2) * gcd(b1, b2) >= gcd(a1, b2) * gcd(b1, a2):
+    aGcd = gcd(a1, a2)
+    bGcd = gcd(b1, b2)
+else:
+    aGcd = gcd(a1, b2)
+    bGcd = gcd(b1, a2)
+print(aGcd, bGcd)

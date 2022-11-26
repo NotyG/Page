@@ -1,0 +1,16 @@
+n = int(input())
+arr = list(map(int,input().split()))
+pref = [0]*n
+for i in range(n):
+    if i == 0:
+        pref[i] = arr[i]
+    else:
+        pref[i] = pref[i-1] + arr[i]
+m = int(input())
+for _ in range(m):
+    l = int(input()) - 1
+    r = int(input()) - 1
+    if l == 0:
+        print(pref[r])
+    else:
+        print(pref[r]-pref[l-1])

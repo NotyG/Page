@@ -1,0 +1,8 @@
+n = int(input()) #maxN = 100
+arr = list(map(int, input().split()))
+u = [0] * (n-1)
+for t in range(n):
+    for i in range(n-t-1): #O(n**2) -> O(10^4)
+        u[t]+= arr[i] * arr[i+t]
+print(*u)
+        

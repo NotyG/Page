@@ -1,0 +1,35 @@
+class Point():
+    def __init__(self, x, type):
+        self.x = x
+        self.type = type
+    def __lt__(self, a):
+        if self.x < a.x:
+            return True
+        elif self.x == a.x:
+            if a.type > self.type:
+                return True
+        return False
+x = int(input())
+points = []
+for i in range(x):
+    l, r = map(int, input().split())
+    r = r + l
+    points.append(Point(l, 1))
+    points.append(Point(r, -1))
+points.sort()
+# for i in range(x*2):
+    # print(points[i].x, end =' ')
+# print()
+# for i in range(x*2):
+    # print(points[i].type, end = ' ')
+# print()
+state = 0
+maxState = -1
+maxX = None
+for i in range(x*2):
+    state += points[i].type
+    if state > maxState:
+        maxState = state
+        maxX = points[i].x
+print(maxState)
+

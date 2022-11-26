@@ -1,0 +1,31 @@
+n, m = map(int, input().split())
+a = [0]* n
+for i in range(n):
+    a[i] = list(map(int, input().split()))
+pref = a.copy()
+for i in range(n):
+    print(a)
+for i in range(n):
+    for j in range(m):
+        if i != 0:
+            pref[i][j] += pref[i-1][j]
+        if j != 0:
+            pref[i][j] += pref[i][j-1]
+        if i and j:
+            pref[i][j] -= pref[i-1][j-1]
+q = int(input())
+for _ in range(q):
+    x1, y1, x2, y2 = map(int, input().split())
+    x1 -= 1
+    x2 -= 1
+    y2 -= 1
+    y1 -= 1 
+    ans = pref[y2][x2]
+    if y1:
+        ans -= pref[y1-1][x2]
+    if x1:
+        ans -= pref[y2][x2-1]
+    if y1 and x1:
+        ans += pref[y1-1][x1-1]
+    print(ans)
+        

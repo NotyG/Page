@@ -1,0 +1,16 @@
+people = []
+# man = int(input())
+# print(man, chr(65 + man // 26), chr(65 + man % 26))
+str = ''
+for i in range(24):
+    people.append(int(input()))
+for i in range(24):
+    man = people[i]
+    str += chr(65 + i % 26)
+    # if man // 26 != 0:
+    str += chr(65 + man // 26) + chr(65 + man % 26)
+    # else:
+        # str += chr(65 + man % 26)
+print(str)
+print(len(str))
+    # print(man, chr(65 + man // 26), chr(65 + man % 26))

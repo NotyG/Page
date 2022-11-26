@@ -1,0 +1,9 @@
+a = int(input()) #Проблема Гольдбаха и ей подобные
+if a == 1:
+    print(1)
+elif a == 4:
+    print(7)
+elif a == 6:
+    print(11)
+else:
+    print(a*2)

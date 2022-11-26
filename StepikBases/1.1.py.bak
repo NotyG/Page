@@ -1,0 +1,9 @@
+n = int(input())
+arr = list(map(int, input().split()))
+pref = [0]*n
+for i in range(n):
+    if i ==0:
+        pref[i] = arr[i]
+    else:
+        pref[i] = pref[i-1] + pref[i]
+print(*pref)

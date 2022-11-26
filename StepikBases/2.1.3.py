@@ -1,0 +1,45 @@
+class Point():
+    def __init__(self, x, type):
+        self.x = x
+        self.type = type
+    def __lt__(self, a):
+        if self.x < a.x:
+            return True
+        elif self.x == a.x:
+            if self.type > a.type:
+                return True
+        return False
+n, m = map(int, input().split())
+points = []
+for i in range(n):
+    x1, x2 = map(int,input().split())
+    points.append(Point(x1, 1))
+    points.append(Point(x2, -1))
+checkPoints = list(map(int, input().split()))
+checkPoints.sort()
+points.sort()
+points.append(Point(points[-1].x + 1, 0))
+state = 0 
+i = 0
+j = 0
+# for point in points:
+    # print(point.x, end = ' ')
+# print()
+# for point in points:
+    # print(point.type, end = ' ')
+# print()
+for j in range(m):
+    for i in range(i , n*2 +1):
+        # state += points[i].type
+        # print('for', i, j, state)
+        
+        if points[i].x > checkPoints[j]:
+            print(state, end = ' ')
+            # print('point lower', checkPoints[j],state - points[i].type, end = ' ') #+
+            break
+        if points[i].x == checkPoints[j] and points[i].type == -1:
+            print(state, end = ' ')
+            # print('point eq', checkPoints[j], state, end = ' ')
+            break
+        state += points[i].type 
+print('0 ' * (m-j-1))
