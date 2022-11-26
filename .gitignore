@@ -1,4 +1,4 @@
-!*.py
-.dist/
-.build/
-.__pycache__/
+!.py
+.dist/*
+.build/*
+.__pycache__/*
